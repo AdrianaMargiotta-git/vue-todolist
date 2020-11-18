@@ -13,14 +13,15 @@
         <div id="app">
 
             <!-- titolo + immagine -->
-            <h1>{{titolo}}</h1>
-            <!-- <img src="" alt=""> -->
+            <div class="tioloImg">
+                <img :src="immagine" style="transform: scaleY(-1);">
+                <h1> {{titolo}}</h1>
+            </div>
 
             <!-- dove inserire le attività da svolgere -->
             <div class="inserisci">
                 <input type="text" v-model="nuovoItem" placeholder="Inserisci una nuova attivit&agrave; da svolgere" @keyup.enter="aggiungiItem">
-                <!-- inserire nel button un method -->
-                <button @click="aggiungiItem">Aggiungi</button>
+                <button @click="aggiungiItem" :disabled="nuovoItem.length === 0">Aggiungi</button>
             </div>
 
             <!-- dove visualizzare le attivtà da svolgere -->
@@ -28,7 +29,8 @@
                 <!-- elenco puntato per indicare le attivtà da svolgere -->
                 <ul class="list">
                     <li class="list-item" v-for="item in reversedItems">
-                        <div class="list-item-delete" @click="removeItem(item)">{{item}} X</div>
+                        <div class="contenuto">{{item}}</div>
+                        <div class="list-item-delete" @click="removeItem(item)">X</div>
                     </li>
                 </ul>
             </div>
