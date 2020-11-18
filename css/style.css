@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 24px 0;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.inserisci {
+    border-radius: 4px;
+    box-shadow: 1px 1px 40px -10px #31505f30, 0px 1px 2px 0px #31505f30;
+    background: white;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.attivita {
+    border-radius: 4px;
+    box-shadow: 1px 1px 40px -10px red, 0px 1px 2px 0px green;
+    background: white;
+    margin-bottom: 24px;
+    padding: 16px 24px;
+}
+
+input {
+    border-radius: 4px;
+    background: coral; /*transparent*/
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    height: 100%;
+    display: block;
+    outline: none;
+  }
+
+button {
+    background: #4fc08d;
+    padding: 10px 22px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    margin: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 1px 1px 15px -2px #212c4430;
+}
+
+/* aggiungere css per l'elenco */
