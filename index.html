@@ -17,12 +17,13 @@
         <div id="app">
 
             <!-- titolo + immagine -->
-            <div class="tioloImg">
+            <div class="titoloImg">
                 <img :src="immagine" style="transform: scaleY(-1);">
                 <h1> {{titolo}}</h1>
             </div>
 
             <!-- dove inserire le attività da svolgere -->
+            <h1 id="titolo2"> {{titolo2}} </h1>
             <div class="inserisci">
                 <input type="text" v-model="nuovoItem" placeholder="Inserisci una nuova attivit&agrave; da svolgere" @keyup.enter="aggiungiItem">
                 <button @click="aggiungiItem" :disabled="nuovoItem.length === 0">Aggiungi</button>
@@ -34,11 +35,11 @@
                 <ul class="list">
                     <li v-if="items.length === 0" class="svoltoTutto">
                     <!-- se items.length è vuota stampa il messaggio -->
-                            Complimenti hai svolto tutte le attivit&agrave;! <br> &#128540;
+                        Complimenti hai svolto tutte le attivit&agrave;! <br> &#128540;
                     </li>
-                    <li class="list-item" v-for="item in reversedItems">
+                    <li class="list-item" :class="{completed: item.completed}" v-for="item in reversedItems">
                     <!-- altrimenti stampa la lista delle cose da fare -->
-                        <div class="contenuto">{{item}}</div>
+                        <div class="list-item-contenuto" @click="completedItem(item)"></div><span>{{item.name}}</span>
                         <div class="list-item-delete" @click="removeItem(item)">X</div>
                     </li>
                 </ul>

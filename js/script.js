@@ -8,8 +8,19 @@ var app = new Vue({
     el: '#app',
     data: {
         titolo: "TodoListVue by Adriana",
+        titolo2: "Tasks to be done",
         immagine: "img/vue-symbol.jpg",
-        items: ["Fare la spesa", "Fare la lavatrice"],
+        completed: true,
+        items: [
+            {
+                name: "fare la spesa",
+                completed: false
+            },
+            {
+                name: "fare la lavatrice",
+                completed: false
+            }
+        ],
         nuovoItem: ''
     },
     computed: {
@@ -20,21 +31,33 @@ var app = new Vue({
     methods: {
         //funzione per il bottone aggiungi
         aggiungiItem: function(){
-            if(this.nuovoItem.trim() !== ''){
-                this.items.push(this.nuovoItem);
-                this.nuovoItem = '';
-            };
+            this.items.push( {
+                name: this.nuovoItem,
+                completed: false
+            });
+            this.nuovoItem = '';
+
+            //codice senza completed
+            // if(this.nuovoItem.trim() !== ''){
+            //     this.items.push(this.nuovoItem);
+            //     this.nuovoItem = '';
+            // };
         },
 
         //funzione per la X nel div list-item-delete
         removeItem: function (item) {
-            this.items = this.items.filter((newItem) => newItem !== item);
-        }
+            this.items = this.items.filter((newItem) => newItem.name !== item.name);
+        },
 
         //non funziona come dovrebbe
         // removeItem: function(item){
         //     this.items.splice(item, 1);
         // }
+
+        //funzione flag attività svolta
+        completedItem: function (item) {
+            item.completed = !item.completed;
+        }
 
     }
 });
