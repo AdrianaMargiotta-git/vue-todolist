@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>TodoList with Vue</title>
@@ -28,7 +32,12 @@
             <div class="attivita">
                 <!-- elenco puntato per indicare le attivtà da svolgere -->
                 <ul class="list">
+                    <li v-if="items.length === 0" class="svoltoTutto">
+                    <!-- se items.length è vuota stampa il messaggio -->
+                            Complimenti hai svolto tutte le attivit&agrave;! <br> &#128540;
+                    </li>
                     <li class="list-item" v-for="item in reversedItems">
+                    <!-- altrimenti stampa la lista delle cose da fare -->
                         <div class="contenuto">{{item}}</div>
                         <div class="list-item-delete" @click="removeItem(item)">X</div>
                     </li>

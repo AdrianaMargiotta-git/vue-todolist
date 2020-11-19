@@ -2,11 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Fondamento', cursive;
 }
-
-/* body{
-    background: linear-gradient(to top left, powderblue, pink);
-} */
 
 .container {
     padding: 24px 0;
@@ -39,6 +36,14 @@
     background: white;
     margin-bottom: 24px;
     padding: 16px 24px;
+}
+
+.svoltoTutto {
+    text-align: center;
+    font-size: 70px;
+    background-image: linear-gradient(to top left, #93C572, #CE3018);
+    color: black;
+    font-family: 'Dancing Script', cursive;
 }
 
 input {
