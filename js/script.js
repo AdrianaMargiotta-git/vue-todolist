@@ -9,7 +9,7 @@ var app = new Vue({
     data: {
         titolo: "TodoListVue by Adriana",
         titolo2: "Tasks to be done",
-        immagine: "img/vue-symbol.jpg",
+        immagine: "img/vue-logo.svg",
         completed: true,
         items: [
             {
